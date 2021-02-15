@@ -15,4 +15,13 @@
 `fancyeq`는 위와 같은 수식을 아래와 같이 표현하도록 도와줍니다
 
     x = fancyeq.equation(over(("-b", fancyeq.operation.plus_minus(), fancyeq.operation.sqrt("b", fancyeq.script.superscript("2") , " - 4ac")), "2a")
+    
+### 4. 패치노트
+[]값 출력
+[]superscript, subscript
+[]over
+[]integral, d/dx
+[]sqrt
+[]sigma, pi
+[]else
  
