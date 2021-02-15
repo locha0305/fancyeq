@@ -17,11 +17,15 @@
     x = fancyeq.equation(over(("-b", fancyeq.operation.plus_minus(), fancyeq.operation.sqrt("b", fancyeq.script.superscript("2") , " - 4ac")), "2a")
     
 ### 4. 패치노트
-[]값 출력
-[]superscript, subscript
-[]over
-[]integral, d/dx
-[]sqrt
-[]sigma, pi
-[]else
+[ ]값 출력
+
+[] superscript, subscript
+
+[] over
+
+[] integral, d/dx
+
+[] sqrt
+[] sigma, pi
+[] else
  
