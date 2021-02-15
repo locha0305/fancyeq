@@ -28,8 +28,7 @@ def sqrt(tokens):
         return tokens #토큰 형태로 반환 '{"text":{"text":"b", "type":"normal"}, {"text":"2", "type":"superscript"}, {"text":"-4ac", "type":"normal"}, "type":"sqrt", "length":length}' 
        
 ```
-`equation` 오브젝트에서 입력을 받을때는 토큰으로 받습니다
-각각의 토큰을 출력하는 형태로 실행됩니다
+`equation` 오브젝트에서 입력을 받을때는 토큰으로 받으며 각각의 토큰을 출력하는 형태로 실행됩니다
 
 #### 4. 토큰
 ##### i) 타입
