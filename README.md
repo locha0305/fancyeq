@@ -18,6 +18,10 @@
 x = fancyeq.equation(over(("-b", fancyeq.operation.plus_minus(), fancyeq.operation.sqrt("b", fancyeq.script.superscript("2") , " - 4ac")), "2a")
 ```
 
+```python
+euler = fancyeq.equation({"text":"e", "type":"normal"}, {"text":"iπ", "type":"superscript"}, {"text":"= -1", "type":"normal"})
+```
+
 모든 함수는 
 ```python
 def sqrt(tokens):
