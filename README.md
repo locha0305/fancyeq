@@ -35,6 +35,7 @@ def sqrt(tokens):
 
     
 ### 4. 패치노트
+일단 모든 텍스트는 `{"text":"b"}` 형식으로 입력을 받고 차후 업데이트 해나갈 예정
 - 1차 목표
 - [ ] show text
 - [ ] subscript, superscript
@@ -44,7 +45,9 @@ def sqrt(tokens):
 - 3차 목표
 - [ ] sqrt
 - [ ] sigma, pi
-
+- 4차 목표
+- [ ] string to text
+- [ ] string to equation
 
 
  
