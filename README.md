@@ -27,7 +27,7 @@ euler = fancyeq.equation('C:\WINDOWS\FONTS\TIMES', 37, (255, 255, 255), {"text":
 ### 4. 패치노트
 - 1차 목표
 - [x] show text
-- [ ] subscript, superscript
+- [x] subscript, superscript
 - [ ] over
 - 2차 목표
 - [ ] integral, differential
