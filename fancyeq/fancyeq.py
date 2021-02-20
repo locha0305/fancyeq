@@ -30,7 +30,8 @@ class equation():
         self.size_pt = size
         self.size_px = self.pt_to_px(self.size_pt)
         self.color = color
-        self.font = pygame.font.Font('{}.ttf'.format(font), self.size_pt)
+        self.default_font = pygame.font.Font('{}.ttf'.format(font), self.size_pt)
+        self.superscript_font = pygame.font.Font('{}.ttf'.format(font), int(self.size_pt / 2))
     def pt_to_px(self, pt):
         return pt / 1.2
     def px_to_pt(self, px):
@@ -39,38 +40,22 @@ class equation():
         rendered = [] #render result
         for token in self.tokens:
             if token["type"] == "default":
-                rendered.append([self.font.render(token["text"], self.size_pt, self.color), len(token["text"]), "default"])
+                rendered.append([self.default_font.render(token["text"], True, self.color), len(token["text"]), "default"])
             elif token["type"] == "superscript":
-                pass
+                rendered.append([self.superscript_font.render((token["text"]), True, self.color), len(token["text"]), "superscript"])
         return rendered
     def display(self, screen, pos):
         rendered = self.render()
         position_x = pos[0]
         position_y = pos[1]
-        for token_and_len in rendered:
-            token = token_and_len[0]
-            length = token_and_len[1]
-            
-            screen.blit(token, (position_x, position_y))
-            position_x += length * self.size_px / 2
-        
-
-
-
-
-    
-    
-        
-    
-screen = pygame.display.set_mode((500, 500)) #화면 크기 설정
-
-
-init()
-
-    
-eq = equation('C:\WINDOWS\FONTS\TIMES', 20, (255, 255, 255), {"text" : "(x + y)^2 = ", "type":"default"}, {"text" : "x^2 + ", "type":"default"}, {"text" : "2xy + ", "type":"default"}, {"text":"y^2", "type":"default"})
-eq.display(screen, (100, 0))
-pygame.display.update()
-
-input()
+        for token_and_len_and_type in rendered:
+            token = token_and_len_and_type[0]
+            length = token_and_len_and_type[1]
+            Type = token_and_len_and_type[2]
+            if Type == "default":
+                screen.blit(token, (position_x, position_y))
+                position_x += length * self.size_px / 2
+            elif Type == "superscript":
+                screen.blit(token, (position_x, position_y - (self.size_px / 6)))
+                position_x += length * self.size_px / 2
 
