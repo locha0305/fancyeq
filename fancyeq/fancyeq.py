@@ -30,8 +30,10 @@ class equation():
         self.size_pt = size
         self.size_px = self.pt_to_px(self.size_pt)
         self.color = color
+
         self.default_font = pygame.font.Font('{}.ttf'.format(font), self.size_pt)
         self.superscript_font = pygame.font.Font('{}.ttf'.format(font), int(self.size_pt / 2))
+        self.subscript_font = pygame.font.Font('{}.ttf'.format(font), int(self.size_pt / 2))
     def pt_to_px(self, pt):
         return pt / 1.2
     def px_to_pt(self, px):
@@ -43,6 +45,9 @@ class equation():
                 rendered.append([self.default_font.render(token["text"], True, self.color), len(token["text"]), "default"])
             elif token["type"] == "superscript":
                 rendered.append([self.superscript_font.render((token["text"]), True, self.color), len(token["text"]), "superscript"])
+            elif token["type"] == "subscript":
+                rendered.append([self.subscript_font.render((token["text"]), True, self.color), len(token["text"]), "subscript"])
+        
         return rendered
     def display(self, screen, pos):
         rendered = self.render()
@@ -58,4 +63,6 @@ class equation():
             elif Type == "superscript":
                 screen.blit(token, (position_x, position_y - (self.size_px / 6)))
                 position_x += length * self.size_px / 2
-
+            elif Type == "subscript":
+                screen.blit(token, (position_x, position_y + (self.size_px / 5 * 4)))
+                position_x += length * self.size_px / 4
