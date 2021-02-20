@@ -13,7 +13,7 @@
 
 
 ```python
-euler = fancyeq.equation({"text":"e", "type":"default"}, {"text":"iπ", "type":"superscript"}, {"text":"= -1", "type":"default"})
+euler = fancyeq.equation('C:\WINDOWS\FONTS\TIMES', 37, (255, 255, 255), {"text":"e", "type":"default"}, {"text":"iπ", "type":"superscript"}, {"text":"= -1", "type":"default"})
 ```
 
 `equation` 오브젝트에서 입력을 받을때는 토큰으로 받으며 각각의 토큰을 출력하는 형태로 실행됩니다
